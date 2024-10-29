@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|h:\\dam 2\\di\\rent-a-car-definitivo\\form7.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:form7.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:form7.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:menuprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|h:\\dam 2\\di\\rent-a-car-definitivo\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|h:\\dam 2\\di\\rent-a-car-definitivo\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4089A003-A529-4984-8407-D7F659AF6858}|Rent-A-Car-Definitivo.csproj|solutionrelative:menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,62 +25,60 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 157,
+          "DockedWidth": 239,
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form7.Designer.cs",
-              "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Form7.Designer.cs",
-              "RelativeDocumentMoniker": "Form7.Designer.cs",
-              "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Form7.Designer.cs",
-              "RelativeToolTip": "Form7.Designer.cs",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAmwGYAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "menuPrincipal.cs",
+              "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuPrincipal.cs",
+              "RelativeDocumentMoniker": "menuPrincipal.cs",
+              "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuPrincipal.cs",
+              "RelativeToolTip": "menuPrincipal.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAvwEoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:59:58.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form7.cs",
-              "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Form7.cs",
-              "RelativeDocumentMoniker": "Form7.cs",
-              "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Form7.cs*",
-              "RelativeToolTip": "Form7.cs*",
-              "ViewState": "AgIAABcAAAAAAAAAAAAswCUAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:59:49.927Z",
+              "WhenOpened": "2024-10-28T14:47:17.951Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Form7.cs [Dise\u00F1o]",
-              "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Form7.cs",
-              "RelativeDocumentMoniker": "Form7.cs",
-              "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Form7.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Form7.cs [Dise\u00F1o]*",
+              "Title": "menuPrincipal.cs [Dise\u00F1o]",
+              "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuPrincipal.cs",
+              "RelativeDocumentMoniker": "menuPrincipal.cs",
+              "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuPrincipal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "menuPrincipal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:59:41.993Z",
+              "WhenOpened": "2024-10-29T19:46:51.953Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "menuPrincipal.Designer.cs",
+              "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuPrincipal.Designer.cs",
+              "RelativeDocumentMoniker": "menuPrincipal.Designer.cs",
+              "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\menuPrincipal.Designer.cs",
+              "RelativeToolTip": "menuPrincipal.Designer.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAtwN8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:54:09.099Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "H:\\DAM 2\\DI\\Rent-A-Car-Definitivo\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:16:40.23Z"
+              "WhenOpened": "2024-10-23T14:43:54.514Z",
+              "EditorCaption": ""
             }
           ]
         }

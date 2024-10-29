@@ -9,7 +9,7 @@ namespace Rent_A_Car_Definitivo
 
 
 
-    static class globales
+    public static class globales
     {
         public static string userlogin;
     }
@@ -21,15 +21,23 @@ namespace Rent_A_Car_Definitivo
         [STAThread]
         static void Main()
         {
-            Form7 form7 = new Form7();
-            if (form7.ShowDialog() ==DialogResult.OK)
+            //Para probar el menu principal
+            Application.EnableVisualStyles();
+            
+            //La app aki Funciona
+            FormLogin form7 = new FormLogin();
+            if (form7.ShowDialog() == DialogResult.OK)
             {
-                Application.EnableVisualStyles();
-                // con esto explota -> Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
+                menuPrincipal formprincipal = new menuPrincipal();
+                Application.Run(formprincipal);
+
+                //Antes del nuevo entorno grafico
+                //Application.EnableVisualStyles();
+                //// con esto explota -> Application.SetCompatibleTextRenderingDefault(false);
+                //Application.Run(new PantallaPrincipal());
 
             }
-          
+
 
         }
     }
