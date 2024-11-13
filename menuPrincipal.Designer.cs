@@ -31,6 +31,7 @@
             this.panelPrincipal = new System.Windows.Forms.Panel();
             this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonCerrarSesion = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonUsuarios = new System.Windows.Forms.Button();
             this.buttonCargos = new System.Windows.Forms.Button();
@@ -73,6 +74,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
+            this.panelMenu.Controls.Add(this.buttonCerrarSesion);
             this.panelMenu.Controls.Add(this.pictureBox1);
             this.panelMenu.Controls.Add(this.buttonUsuarios);
             this.panelMenu.Controls.Add(this.buttonCargos);
@@ -84,6 +86,16 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(127, 450);
             this.panelMenu.TabIndex = 3;
+            // 
+            // buttonCerrarSesion
+            // 
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(26, 415);
+            this.buttonCerrarSesion.Name = "buttonCerrarSesion";
+            this.buttonCerrarSesion.Size = new System.Drawing.Size(75, 23);
+            this.buttonCerrarSesion.TabIndex = 6;
+            this.buttonCerrarSesion.Text = "Log out";
+            this.buttonCerrarSesion.UseVisualStyleBackColor = true;
+            this.buttonCerrarSesion.Click += new System.EventHandler(this.buttonCerrarSesion_Click);
             // 
             // pictureBox1
             // 
@@ -222,6 +234,7 @@
             this.Name = "menuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menuPrincipal";
+            this.Load += new System.EventHandler(this.menuPrincipal_Load);
             this.panelPrincipal.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -247,5 +260,6 @@
         private System.Windows.Forms.Button buttonMinimizar;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Panel panelContenido;
+        private System.Windows.Forms.Button buttonCerrarSesion;
     }
 }

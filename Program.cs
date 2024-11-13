@@ -23,13 +23,19 @@ namespace Rent_A_Car_Definitivo
         {
             //Para probar el menu principal
             Application.EnableVisualStyles();
-            
-            //La app aki Funciona
+            //menuPrincipal formprincipal = new menuPrincipal();
+            //Application.Run(formprincipal);
+
+
+            //Descomentar para cuando acabe lo de los permisos
+            //=======================================================================================================
             FormLogin form7 = new FormLogin();
             if (form7.ShowDialog() == DialogResult.OK)
             {
                 menuPrincipal formprincipal = new menuPrincipal();
                 Application.Run(formprincipal);
+
+            //=======================================================================================================
 
                 //Antes del nuevo entorno grafico
                 //Application.EnableVisualStyles();
@@ -39,6 +45,6 @@ namespace Rent_A_Car_Definitivo
             }
 
 
-        }
+    }
     }
 }

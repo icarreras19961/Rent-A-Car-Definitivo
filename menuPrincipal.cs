@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Rent_A_Car_Definitivo
@@ -13,10 +7,51 @@ namespace Rent_A_Car_Definitivo
     public partial class menuPrincipal : Form
     {
         Boolean pequeno = false;
-        Boolean arrastrar=false;
+        Boolean arrastrar = false;
         public menuPrincipal()
         {
             InitializeComponent();
+
+        }
+        //Los permisos de los usuarios con los botones
+        private void menuPrincipal_Load(object sender, EventArgs e)
+        {
+            String nombre = globales.userlogin;
+
+            SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;DATABASE=RentACar;User id=RentACar_user;password=1234;trusted_Connection=true;TrustServerCertificate=true");
+            conn.Open();
+
+            String sql = $"SELECT * FROM dbo.users WHERE nombre='{nombre}'";
+
+            SqlCommand cmd = new SqlCommand(sql, conn);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    String rol = reader.GetString(4);
+                    if (rol == "admin")
+                    {
+                        //El admin ve todos los botones
+                    }
+                    else if (rol == "empleado")
+                    {
+                        //El empleado no ve los botones de usuarios y cargos
+                        buttonUsuarios.Visible = false;
+                        buttonCargos.Visible = false;
+                    }
+                    else if (rol == "cliente")
+                    {
+                        //El cliente no puede ver todos los usuarios, los cargos ni los clientes de la app
+                        buttonUsuarios.Visible = false;
+                        buttonCargos.Visible = false;
+                        buttonClientes.Visible = false;
+
+                    }
+                }
+            }
         }
 
         //El panelapp
@@ -44,7 +79,7 @@ namespace Rent_A_Car_Definitivo
 
         private void buttonMinimizar_Click(object sender, EventArgs e)
         {
-             this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void panelApp_MouseMove(object sender, MouseEventArgs e)
@@ -84,7 +119,7 @@ namespace Rent_A_Car_Definitivo
 
         private void buttonClientes_Click(object sender, EventArgs e)
         {
-            AbrirFormhijo(new FormCliente());
+            AbrirFormhijo(new PantallaNavCliente());
         }
 
         private void buttonReservas_Click(object sender, EventArgs e)
@@ -100,6 +135,14 @@ namespace Rent_A_Car_Definitivo
         private void buttonUsuarios_Click(object sender, EventArgs e)
         {
             AbrirFormhijo(new FormUsuarios());
+        }
+
+        private void buttonCerrarSesion_Click(object sender, EventArgs e)
+        {
+            //cierra la ventana y reinicia la app
+            this.Close();
+            Application.Restart();
+            Environment.Exit(0);//apaga la app a lo bruto
         }
     }
 }

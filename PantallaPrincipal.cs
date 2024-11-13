@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Rent_A_Car_Definitivo
 {
@@ -52,7 +43,7 @@ namespace Rent_A_Car_Definitivo
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Estas seguro?","Salir",MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Estas seguro?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 this.Close();
 
@@ -62,7 +53,7 @@ namespace Rent_A_Car_Definitivo
         private void Form1_Load(object sender, EventArgs e)
         {
             String nombre = globales.userlogin;
-            
+
             SqlConnection conn = new SqlConnection("Server=localhost\\SQLEXPRESS;DATABASE=RentACar;User id=RentACar_user;password=1234;trusted_Connection=true;TrustServerCertificate=true");
             conn.Open();
 
@@ -71,7 +62,7 @@ namespace Rent_A_Car_Definitivo
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             SqlDataReader reader = cmd.ExecuteReader();
-            
+
             if (reader.HasRows)
             {
                 while (reader.Read())
@@ -79,7 +70,7 @@ namespace Rent_A_Car_Definitivo
                     if (!reader.IsDBNull(0))
                     {
                         String restriccion = reader.GetString(1);
-                            
+
                         foreach (ToolStripMenuItem item in menuStrip1.Items)
                         {
                             if (restriccion.Equals(item.Text))

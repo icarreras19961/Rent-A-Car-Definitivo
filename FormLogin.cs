@@ -59,8 +59,9 @@ namespace Rent_A_Car_Definitivo
             else
             {
                 //Cuando el user falla 
+                textBox2.Text = "";
                 Intentos++;
-                label4.Text = " Contraseña incorrectos\nIntentos: " + Intentos;
+                label4.Text = " Contraseña incorrectos\nIntentos: " + Intentos+" / 3";
                 if (Intentos == 3)
                 {
                     //Antes de hacer una query nueva, se cierra la anterior
