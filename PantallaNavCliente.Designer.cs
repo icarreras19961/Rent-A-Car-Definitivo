@@ -37,8 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentACarDataSet = new Rent_A_Car_Definitivo.RentACarDataSet();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -46,12 +44,15 @@
             this.buttonAccept = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonPrimero = new System.Windows.Forms.Button();
             this.buttonPrevio = new System.Windows.Forms.Button();
             this.buttonSiguiente = new System.Windows.Forms.Button();
             this.buttonUltimo = new System.Windows.Forms.Button();
+            this.rentACarDataSet = new Rent_A_Car_Definitivo.RentACarDataSet();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clientTableAdapter = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.clientTableAdapter();
             this.tableAdapterManager = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.TableAdapterManager();
             this.clientDataGridView = new System.Windows.Forms.DataGridView();
@@ -73,13 +74,13 @@
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentACarDataSet)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rentACarDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,22 +108,13 @@
             // 
             // panel8
             // 
+            this.panel8.AutoScroll = true;
             this.panel8.Controls.Add(this.clientDataGridView);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(246, 0);
+            this.panel8.Location = new System.Drawing.Point(281, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(554, 379);
+            this.panel8.Size = new System.Drawing.Size(519, 379);
             this.panel8.TabIndex = 1;
-            // 
-            // clientBindingSource
-            // 
-            this.clientBindingSource.DataMember = "client";
-            this.clientBindingSource.DataSource = this.rentACarDataSet;
-            // 
-            // rentACarDataSet
-            // 
-            this.rentACarDataSet.DataSetName = "RentACarDataSet";
-            this.rentACarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel7
             // 
@@ -139,7 +131,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(246, 379);
+            this.panel7.Size = new System.Drawing.Size(281, 379);
             this.panel7.TabIndex = 0;
             // 
             // panel3
@@ -192,6 +184,7 @@
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.buttonModificar);
             this.panel6.Controls.Add(this.buttonDelete);
             this.panel6.Controls.Add(this.buttonInsert);
             this.panel6.Controls.Add(this.buttonPrimero);
@@ -201,12 +194,22 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(305, 35);
+            this.panel6.Size = new System.Drawing.Size(354, 35);
             this.panel6.TabIndex = 0;
+            // 
+            // buttonModificar
+            // 
+            this.buttonModificar.Location = new System.Drawing.Point(245, 2);
+            this.buttonModificar.Name = "buttonModificar";
+            this.buttonModificar.Size = new System.Drawing.Size(33, 30);
+            this.buttonModificar.TabIndex = 9;
+            this.buttonModificar.Text = "∑";
+            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(256, 3);
+            this.buttonDelete.Location = new System.Drawing.Point(285, 3);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(33, 30);
             this.buttonDelete.TabIndex = 8;
@@ -264,6 +267,16 @@
             this.buttonUltimo.UseVisualStyleBackColor = true;
             this.buttonUltimo.Click += new System.EventHandler(this.buttonUltimo_Click);
             // 
+            // rentACarDataSet
+            // 
+            this.rentACarDataSet.DataSetName = "RentACarDataSet";
+            this.rentACarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "client";
+            this.clientBindingSource.DataSource = this.rentACarDataSet;
+            // 
             // clientTableAdapter
             // 
             this.clientTableAdapter.ClearBeforeFill = true;
@@ -275,6 +288,7 @@
             this.tableAdapterManager.clientTableAdapter = this.clientTableAdapter;
             this.tableAdapterManager.contracteTableAdapter = null;
             this.tableAdapterManager.reservaTableAdapter = null;
+            this.tableAdapterManager.restriccionesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.usersTableAdapter = null;
             this.tableAdapterManager.vehicleTableAdapter = null;
@@ -290,9 +304,9 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.clientDataGridView.DataSource = this.clientBindingSource;
-            this.clientDataGridView.Location = new System.Drawing.Point(77, 70);
+            this.clientDataGridView.Location = new System.Drawing.Point(6, 6);
             this.clientDataGridView.Name = "clientDataGridView";
-            this.clientDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.clientDataGridView.Size = new System.Drawing.Size(501, 370);
             this.clientDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -328,87 +342,87 @@
             // dniLabel
             // 
             dniLabel.AutoSize = true;
-            dniLabel.Location = new System.Drawing.Point(61, 102);
+            dniLabel.Location = new System.Drawing.Point(67, 100);
             dniLabel.Name = "dniLabel";
             dniLabel.Size = new System.Drawing.Size(24, 13);
-            dniLabel.TabIndex = 29;
+            dniLabel.TabIndex = 0;
             dniLabel.Text = "dni:";
             // 
             // dniTextBox
             // 
             this.dniTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "dni", true));
-            this.dniTextBox.Location = new System.Drawing.Point(88, 99);
+            this.dniTextBox.Location = new System.Drawing.Point(97, 97);
             this.dniTextBox.Name = "dniTextBox";
             this.dniTextBox.Size = new System.Drawing.Size(100, 20);
-            this.dniTextBox.TabIndex = 30;
+            this.dniTextBox.TabIndex = 1;
             // 
             // nomLabel
             // 
             nomLabel.AutoSize = true;
-            nomLabel.Location = new System.Drawing.Point(55, 128);
+            nomLabel.Location = new System.Drawing.Point(61, 126);
             nomLabel.Name = "nomLabel";
             nomLabel.Size = new System.Drawing.Size(30, 13);
-            nomLabel.TabIndex = 30;
+            nomLabel.TabIndex = 2;
             nomLabel.Text = "nom:";
             // 
             // nomTextBox
             // 
             this.nomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "nom", true));
-            this.nomTextBox.Location = new System.Drawing.Point(88, 125);
+            this.nomTextBox.Location = new System.Drawing.Point(97, 123);
             this.nomTextBox.Name = "nomTextBox";
             this.nomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomTextBox.TabIndex = 31;
+            this.nomTextBox.TabIndex = 3;
             // 
             // cognomLabel
             // 
             cognomLabel.AutoSize = true;
-            cognomLabel.Location = new System.Drawing.Point(34, 154);
+            cognomLabel.Location = new System.Drawing.Point(43, 152);
             cognomLabel.Name = "cognomLabel";
             cognomLabel.Size = new System.Drawing.Size(48, 13);
-            cognomLabel.TabIndex = 31;
+            cognomLabel.TabIndex = 4;
             cognomLabel.Text = "cognom:";
             // 
             // cognomTextBox
             // 
             this.cognomTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "cognom", true));
-            this.cognomTextBox.Location = new System.Drawing.Point(88, 151);
+            this.cognomTextBox.Location = new System.Drawing.Point(97, 149);
             this.cognomTextBox.Name = "cognomTextBox";
             this.cognomTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cognomTextBox.TabIndex = 32;
+            this.cognomTextBox.TabIndex = 5;
             // 
             // direccioLabel
             // 
             direccioLabel.AutoSize = true;
-            direccioLabel.Location = new System.Drawing.Point(35, 180);
+            direccioLabel.Location = new System.Drawing.Point(44, 178);
             direccioLabel.Name = "direccioLabel";
             direccioLabel.Size = new System.Drawing.Size(47, 13);
-            direccioLabel.TabIndex = 32;
+            direccioLabel.TabIndex = 6;
             direccioLabel.Text = "direccio:";
             // 
             // direccioTextBox
             // 
             this.direccioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "direccio", true));
-            this.direccioTextBox.Location = new System.Drawing.Point(88, 177);
+            this.direccioTextBox.Location = new System.Drawing.Point(97, 175);
             this.direccioTextBox.Name = "direccioTextBox";
             this.direccioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.direccioTextBox.TabIndex = 33;
+            this.direccioTextBox.TabIndex = 7;
             // 
             // poblacioLabel
             // 
             poblacioLabel.AutoSize = true;
-            poblacioLabel.Location = new System.Drawing.Point(32, 206);
+            poblacioLabel.Location = new System.Drawing.Point(41, 204);
             poblacioLabel.Name = "poblacioLabel";
             poblacioLabel.Size = new System.Drawing.Size(50, 13);
-            poblacioLabel.TabIndex = 33;
+            poblacioLabel.TabIndex = 8;
             poblacioLabel.Text = "poblacio:";
             // 
             // poblacioTextBox
             // 
             this.poblacioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientBindingSource, "poblacio", true));
-            this.poblacioTextBox.Location = new System.Drawing.Point(88, 203);
+            this.poblacioTextBox.Location = new System.Drawing.Point(97, 201);
             this.poblacioTextBox.Name = "poblacioTextBox";
             this.poblacioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.poblacioTextBox.TabIndex = 34;
+            this.poblacioTextBox.TabIndex = 9;
             // 
             // PantallaNavCliente
             // 
@@ -422,14 +436,14 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentACarDataSet)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.rentACarDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -449,20 +463,21 @@
         private System.Windows.Forms.Button buttonPrevio;
         private System.Windows.Forms.Button buttonSiguiente;
         private System.Windows.Forms.Button buttonUltimo;
-        private RentACarDataSet rentACarDataSet;
-        private System.Windows.Forms.BindingSource clientBindingSource;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonInsert;
+        private System.Windows.Forms.Button buttonModificar;
+        private RentACarDataSet rentACarDataSet;
+        private System.Windows.Forms.BindingSource clientBindingSource;
         private RentACarDataSetTableAdapters.clientTableAdapter clientTableAdapter;
+        private RentACarDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView clientDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private RentACarDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox poblacioTextBox;
         private System.Windows.Forms.TextBox direccioTextBox;
         private System.Windows.Forms.TextBox cognomTextBox;

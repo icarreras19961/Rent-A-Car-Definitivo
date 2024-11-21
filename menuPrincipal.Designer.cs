@@ -230,7 +230,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelApp);
             this.Controls.Add(this.panelPrincipal);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "menuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "menuPrincipal";

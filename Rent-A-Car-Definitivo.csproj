@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Rent_A_Car_Definitivo</RootNamespace>
     <AssemblyName>Rent-A-Car-Definitivo</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -58,6 +58,12 @@
     </Compile>
     <Compile Include="PantallaNavCliente.Designer.cs">
       <DependentUpon>PantallaNavCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PantallaNavVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaNavVehiculo.Designer.cs">
+      <DependentUpon>PantallaNavVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="PantallaPrincipal.cs">
       <SubType>Form</SubType>
@@ -120,6 +126,9 @@
     <EmbeddedResource Include="PantallaNavCliente.resx">
       <DependentUpon>PantallaNavCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PantallaNavVehiculo.resx">
+      <DependentUpon>PantallaNavVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PantallaPrincipal.resx">
       <DependentUpon>PantallaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +172,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="RentACarDataSet.xsc">
       <DependentUpon>RentACarDataSet.xsd</DependentUpon>
     </None>
@@ -174,11 +188,6 @@
     <None Include="RentACarDataSet.xss">
       <DependentUpon>RentACarDataSet.xsd</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logo rent a car.png" />
   </ItemGroup>
   <ItemGroup>

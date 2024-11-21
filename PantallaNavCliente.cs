@@ -37,8 +37,10 @@ namespace Rent_A_Car_Definitivo
         {
             // TODO: esta línea de código carga datos en la tabla 'rentACarDataSet.client' Puede moverla o quitarla según sea necesario.
             this.clientTableAdapter.Fill(this.rentACarDataSet.client);
-            buttonAccept.Enabled = false;
-            buttonCancel.Enabled = false;
+            // TODO: esta línea de código carga datos en la tabla 'rentACarDataSet.client' Puede moverla o quitarla según sea necesario.
+            this.clientTableAdapter.Fill(this.rentACarDataSet.client);
+           
+            modoEdicion(false);
 
         }
 
@@ -65,12 +67,12 @@ namespace Rent_A_Car_Definitivo
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             this.clientBindingSource.AddNew();
-            buttonAccept.Enabled = true;
-            buttonCancel.Enabled = true;
+           modoEdicion(true);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+          
             MessageBox.Show("¿Estás seguro de que quieres borrar este registro?", "Borrar registro", MessageBoxButtons.YesNo);
             if (DialogResult == DialogResult.Yes)
             {
@@ -86,21 +88,65 @@ namespace Rent_A_Car_Definitivo
             //"cerrar" los text
             this.clientBindingSource.EndEdit();
 
-            //insertar datos
+            //Actualizar datos
             this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
+            //rehacer el origen de datos por 23 vez
 
-            //this.clientTableAdapter.Update(this.rentACarDataSet.client);
-
-            buttonAccept.Enabled = false;
-            buttonCancel.Enabled = false;
+            modoEdicion(false);
 
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+
             this.clientBindingSource.CancelEdit();
-            buttonAccept.Enabled = false;
-            buttonCancel.Enabled = false;
+            dniTextBox.Text = "";
+            nomTextBox.Text = "";
+            cognomTextBox.Text = "";
+            dniTextBox.Text = "";
+            poblacioTextBox.Text = "";
+
+            modoEdicion(false);
+
+        }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+          modoEdicion(true);
+
+        }
+
+        //una funcion que detecte cuando entras en modo edicion y mediante un foreach se habiliten los botones de aceptar y cancelar
+        //ademas de desabilitar los botones de navegacion, ademas de esto se comprobara si la base de datos esta vacia y si lo esta 
+        //no se podran utilizar los botones eliminar y modificar
+
+        public void modoEdicion(bool estaEditanto)
+        {
+            //Habilitar los botones de navegacion
+            foreach (Control item in panel6.Controls)
+            {
+                item.Enabled = !estaEditanto; 
+            }
+            //Habilitar los campos de texto del panel central
+            foreach (Control item in panel7.Controls)
+            {
+                item.Enabled = estaEditanto;
+            }
+
+            //habilitar botones de aceptar y cancelar
+            foreach (Control item in panel5.Controls)
+            {
+                item.Enabled = estaEditanto;
+            }
+            
+        }
+
+        private void clientBindingNavigatorSaveItem_Click_2(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clientBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
+
         }
     }
 }

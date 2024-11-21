@@ -366,9 +366,9 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.clientDataGridView.DataSource = this.clientBindingSource;
-            this.clientDataGridView.Location = new System.Drawing.Point(3, 6);
+            this.clientDataGridView.Location = new System.Drawing.Point(184, 39);
             this.clientDataGridView.Name = "clientDataGridView";
-            this.clientDataGridView.Size = new System.Drawing.Size(794, 207);
+            this.clientDataGridView.Size = new System.Drawing.Size(300, 220);
             this.clientDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1

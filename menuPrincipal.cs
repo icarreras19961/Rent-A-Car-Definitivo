@@ -114,7 +114,7 @@ namespace Rent_A_Car_Definitivo
         }
         private void buttonVehiculos_Click(object sender, EventArgs e)
         {
-            AbrirFormhijo(new FormVehiculos());
+            AbrirFormhijo(new PantallaNavVehiculo());
         }
 
         private void buttonClientes_Click(object sender, EventArgs e)

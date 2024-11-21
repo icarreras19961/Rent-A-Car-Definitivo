@@ -17,3 +17,4 @@ H:\DAM 2\DI\Rent-A-Car-Definitivo\obj\Debug\Rent_A_Car_Definitivo.FormContrato.r
 H:\DAM 2\DI\Rent-A-Car-Definitivo\obj\Debug\Rent_A_Car_Definitivo.FormLogin.resources
 H:\DAM 2\DI\Rent-A-Car-Definitivo\obj\Debug\Rent_A_Car_Definitivo.menuPrincipal.resources
 H:\DAM 2\DI\Rent-A-Car-Definitivo\obj\Debug\Rent_A_Car_Definitivo.PantallaNavCliente.resources
+H:\DAM 2\DI\Rent-A-Car-Definitivo\obj\Debug\Rent_A_Car_Definitivo.PantallaNavVehiculo.resources
