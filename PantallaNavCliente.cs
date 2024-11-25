@@ -148,5 +148,97 @@ namespace Rent_A_Car_Definitivo
             this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
 
         }
+
+        private void validadorIdentificador()
+        {
+            String identificador = dniTextBox.Text.ToUpper();
+            char[] chars = identificador.ToCharArray();
+            char[] letras = "TRWAGMYFPDXBNJZSQVHLCKE".ToCharArray();
+            if (chars[0]== 'X'|| chars[0] == 'Y'|| chars[0] == 'Z')
+            {
+                char[] nif = new char[chars.Length+1];
+                switch (chars[0])
+                {
+                    case 'X':
+                        
+                        nif[0] = '0';
+                        break;
+                    case 'Y':
+                        
+                        nif[0] = '1';
+                        break;
+                    case 'Z':
+                        
+                        nif[0] = '2';
+                        break;
+                }
+                for (int i = 1; i <= chars.Length-1; i++)
+                {
+                    try
+                    {
+                    if (Char.IsDigit(chars[i])) 
+                    {
+                    nif[i] = chars[i]; 
+                        
+                    }
+
+                    }catch (Exception e)
+                    {
+                        MessageBox.Show("Me he pasado");
+                        break;
+                    }
+                }
+                String nifString = new string(nif).TrimEnd('\0');
+
+                int numero = Convert.ToInt32(nifString);
+                int resto = numero % 23;
+                char letra;
+                letra = letras[resto];
+                
+                nifString += letra;
+
+                char[] nifChar = nifString.ToCharArray();
+                
+                switch (nifChar[0])
+                {
+                    case '0':
+
+                        nifChar[0] = 'X';
+                        break;
+                    case '1':
+
+                        nifChar[0] = 'Y';
+                        break;
+                    case '2':
+
+                        nifChar[0] = 'Z';
+                        break;
+                }
+                String nifDef = new string(nifChar);
+                MessageBox.Show(identificador + "" + nifDef);
+
+                if(!identificador.Equals(nifDef))
+                {
+                    MessageBox.Show("El identificador no es correcto");
+                    dniTextBox.Focus();
+                }
+
+            }
+            else if (Char.IsDigit(chars[0]))
+            {
+                
+
+            }
+            else
+            {
+                MessageBox.Show("El identificador no es correcto");
+                dniTextBox.Focus();
+            }
+        }
+
+        private void buttonTest_Click(object sender, EventArgs e)
+        {
+            validadorIdentificador();
+        }
     }
 }
