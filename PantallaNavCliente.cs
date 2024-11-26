@@ -67,7 +67,7 @@ namespace Rent_A_Car_Definitivo
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             this.clientBindingSource.AddNew();
-           modoEdicion(true);
+            modoEdicion(true);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -83,16 +83,25 @@ namespace Rent_A_Car_Definitivo
         private void buttonAccept_Click(object sender, EventArgs e)
         {
             //Validar datos
-            this.Validate(); //valida el contenido del campo actual
+            if (validadorIdentificador())
+            {
 
-            //"cerrar" los text
-            this.clientBindingSource.EndEdit();
+                this.Validate(); //valida el contenido del campo actual
 
-            //Actualizar datos
-            this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
-            //rehacer el origen de datos por 23 vez
+                //"cerrar" los text
+                this.clientBindingSource.EndEdit();
 
-            modoEdicion(false);
+                //Actualizar datos
+                this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
+                //rehacer el origen de datos por 23 vez
+
+                modoEdicion(false);
+            }
+            else
+            {
+                MessageBox.Show("El identificador no es correcto");
+                dniTextBox.Focus();
+            }
 
         }
 
@@ -149,7 +158,7 @@ namespace Rent_A_Car_Definitivo
 
         }
 
-        private void validadorIdentificador()
+        private Boolean validadorIdentificador()
         {
             String identificador = dniTextBox.Text.ToUpper();
             char[] chars = identificador.ToCharArray();
@@ -219,20 +228,34 @@ namespace Rent_A_Car_Definitivo
 
                 if(!identificador.Equals(nifDef))
                 {
-                    MessageBox.Show("El identificador no es correcto");
-                    dniTextBox.Focus();
+                    return false;
+                    
                 }
+                return true;
 
             }
             else if (Char.IsDigit(chars[0]))
             {
-                
+                char[] nif = new char[chars.Length];
 
+                for (int i = 0; i <= chars.Length-2; i++)
+                {
+                    nif[i] = chars[i];
+                }
+
+                String nifString = new string(nif).TrimEnd('\0');
+                int numero = Convert.ToInt32(nifString);
+                int resto = numero % 23;
+                char letra;
+                letra = letras[resto];
+                nifString += letra;
+                char[] nifChar = nifString.ToCharArray();
+                String nifDef = new string(nifChar);
+                return true;
             }
             else
             {
-                MessageBox.Show("El identificador no es correcto");
-                dniTextBox.Focus();
+                return false;
             }
         }
 
@@ -240,5 +263,5 @@ namespace Rent_A_Car_Definitivo
         {
             validadorIdentificador();
         }
-    }
+}
 }

@@ -144,6 +144,15 @@ namespace Rent_A_Car_Definitivo
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //cuando elijo la tipologia se filtran las marcas y los modelos
+            //****************
+            //TODO: para casa
+            //hay que hacer una vista de tipologias y otra de las marcas (Select Distinct tipologia From models)
+            //luego en los combobox de tipologias y marcas se selecciona la vista y en la de modelos
+            //va directamente la tabla de modelos
+            //luego el binding source va como esta aqui abajo para que cambie los filtros respecto al modelo elegido
+            //****************
+
             this.modelsBindingSource.Filter = "tipologia = '" + comboBox1.Text + "'";
             this.marcasBindingSource.Filter = "tipologia = '" + comboBox1.Text + "'";
         }
