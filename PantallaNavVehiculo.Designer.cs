@@ -35,16 +35,8 @@
             System.Windows.Forms.Label tipologiaLabel;
             System.Windows.Forms.Label matriculaLabel;
             this.panel1 = new System.Windows.Forms.Panel();
-            this.vehicleDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rentACarDataSet = new Rent_A_Car_Definitivo.RentACarDataSet();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.marcasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -64,20 +56,26 @@
             this.buttonPrevio = new System.Windows.Forms.Button();
             this.buttonSiguiente = new System.Windows.Forms.Button();
             this.buttonUltimo = new System.Windows.Forms.Button();
-            this.modelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicleTableAdapter = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.vehicleTableAdapter();
             this.tableAdapterManager = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.TableAdapterManager();
             this.tipologiasTableAdapter = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.tipologiasTableAdapter();
             this.marcasTableAdapter = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.marcasTableAdapter();
             this.modelsTableAdapter = new Rent_A_Car_Definitivo.RentACarDataSetTableAdapters.modelsTableAdapter();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.modelsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehicleDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             colorLabel = new System.Windows.Forms.Label();
             modelLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             tipologiaLabel = new System.Windows.Forms.Label();
             matriculaLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentACarDataSet)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
@@ -87,6 +85,8 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.modelsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // colorLabel
@@ -128,6 +128,7 @@
             // matriculaLabel
             // 
             matriculaLabel.AutoSize = true;
+            matriculaLabel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehicleBindingSource, "matricula", true));
             matriculaLabel.Location = new System.Drawing.Point(67, 89);
             matriculaLabel.Name = "matriculaLabel";
             matriculaLabel.Size = new System.Drawing.Size(52, 13);
@@ -146,58 +147,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 0;
             // 
-            // vehicleDataGridView
-            // 
-            this.vehicleDataGridView.AutoGenerateColumns = false;
-            this.vehicleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.vehicleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.vehicleDataGridView.DataSource = this.vehicleBindingSource;
-            this.vehicleDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vehicleDataGridView.Location = new System.Drawing.Point(295, 40);
-            this.vehicleDataGridView.Name = "vehicleDataGridView";
-            this.vehicleDataGridView.Size = new System.Drawing.Size(505, 373);
-            this.vehicleDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "matricula";
-            this.dataGridViewTextBoxColumn1.HeaderText = "matricula";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "tipologia";
-            this.dataGridViewTextBoxColumn2.HeaderText = "tipologia";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "marca";
-            this.dataGridViewTextBoxColumn3.HeaderText = "marca";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "model";
-            this.dataGridViewTextBoxColumn4.HeaderText = "model";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "color";
-            this.dataGridViewTextBoxColumn5.HeaderText = "color";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "vehicle";
-            this.vehicleBindingSource.DataSource = this.rentACarDataSet;
-            // 
             // rentACarDataSet
             // 
             this.rentACarDataSet.DataSetName = "RentACarDataSet";
@@ -205,6 +154,7 @@
             // 
             // panel4
             // 
+            this.panel4.AutoScroll = true;
             this.panel4.Controls.Add(this.comboBox3);
             this.panel4.Controls.Add(this.comboBox2);
             this.panel4.Controls.Add(this.comboBox1);
@@ -218,23 +168,12 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 40);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(295, 373);
+            this.panel4.Size = new System.Drawing.Size(365, 373);
             this.panel4.TabIndex = 2;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehicleBindingSource, "model", true));
-            this.comboBox3.DataSource = this.modelsBindingSource;
-            this.comboBox3.DisplayMember = "model";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(125, 197);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 12;
             // 
             // comboBox2
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.marcasBindingSource, "marca", true));
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehicleBindingSource, "marca", true));
             this.comboBox2.DataSource = this.marcasBindingSource;
             this.comboBox2.DisplayMember = "marca";
             this.comboBox2.FormattingEnabled = true;
@@ -276,7 +215,6 @@
             // 
             // colorTextBox
             // 
-            this.colorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehicleBindingSource, "color", true));
             this.colorTextBox.Location = new System.Drawing.Point(125, 236);
             this.colorTextBox.Name = "colorTextBox";
             this.colorTextBox.Size = new System.Drawing.Size(100, 20);
@@ -415,11 +353,6 @@
             this.buttonUltimo.UseVisualStyleBackColor = true;
             this.buttonUltimo.Click += new System.EventHandler(this.buttonUltimo_Click);
             // 
-            // modelsBindingSource
-            // 
-            this.modelsBindingSource.DataMember = "models";
-            this.modelsBindingSource.DataSource = this.rentACarDataSet;
-            // 
             // vehicleTableAdapter
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
@@ -449,6 +382,74 @@
             // 
             this.modelsTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBox3
+            // 
+            this.comboBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehicleBindingSource, "model", true));
+            this.comboBox3.DataSource = this.modelsBindingSource;
+            this.comboBox3.DisplayMember = "model";
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(125, 199);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 13;
+            // 
+            // modelsBindingSource
+            // 
+            this.modelsBindingSource.DataMember = "models";
+            this.modelsBindingSource.DataSource = this.rentACarDataSet;
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "vehicle";
+            this.vehicleBindingSource.DataSource = this.rentACarDataSet;
+            // 
+            // vehicleDataGridView
+            // 
+            this.vehicleDataGridView.AutoGenerateColumns = false;
+            this.vehicleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vehicleDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.vehicleDataGridView.DataSource = this.vehicleBindingSource;
+            this.vehicleDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vehicleDataGridView.Location = new System.Drawing.Point(365, 40);
+            this.vehicleDataGridView.Name = "vehicleDataGridView";
+            this.vehicleDataGridView.Size = new System.Drawing.Size(435, 373);
+            this.vehicleDataGridView.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "matricula";
+            this.dataGridViewTextBoxColumn1.HeaderText = "matricula";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "tipologia";
+            this.dataGridViewTextBoxColumn2.HeaderText = "tipologia";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "marca";
+            this.dataGridViewTextBoxColumn3.HeaderText = "marca";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "model";
+            this.dataGridViewTextBoxColumn4.HeaderText = "model";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "color";
+            this.dataGridViewTextBoxColumn5.HeaderText = "color";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
             // PantallaNavVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,8 +460,6 @@
             this.Text = "PantallaNavVehiculo";
             this.Load += new System.EventHandler(this.PantallaNavVehiculo_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentACarDataSet)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -471,6 +470,8 @@
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.modelsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -492,11 +493,9 @@
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAccept;
         private RentACarDataSet rentACarDataSet;
-        private System.Windows.Forms.BindingSource vehicleBindingSource;
         private RentACarDataSetTableAdapters.vehicleTableAdapter vehicleTableAdapter;
         private RentACarDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox matriculaTextBox;
@@ -505,8 +504,10 @@
         private RentACarDataSetTableAdapters.tipologiasTableAdapter tipologiasTableAdapter;
         private System.Windows.Forms.BindingSource marcasBindingSource;
         private RentACarDataSetTableAdapters.marcasTableAdapter marcasTableAdapter;
-        private System.Windows.Forms.BindingSource modelsBindingSource;
         private RentACarDataSetTableAdapters.modelsTableAdapter modelsTableAdapter;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.BindingSource modelsBindingSource;
+        private System.Windows.Forms.BindingSource vehicleBindingSource;
         private System.Windows.Forms.DataGridView vehicleDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

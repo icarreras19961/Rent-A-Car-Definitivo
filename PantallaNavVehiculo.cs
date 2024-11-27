@@ -28,7 +28,9 @@ namespace Rent_A_Car_Definitivo
 
         private void PantallaNavVehiculo_Load(object sender, EventArgs e)
         {
-            
+            // TODO: esta línea de código carga datos en la tabla 'rentACarDataSet.models' Puede moverla o quitarla según sea necesario.
+            this.modelsTableAdapter.Fill(this.rentACarDataSet.models);
+
             // TODO: esta línea de código carga datos en la tabla 'rentACarDataSet.models' Puede moverla o quitarla según sea necesario.
             this.modelsTableAdapter.Fill(this.rentACarDataSet.models);
             // TODO: esta línea de código carga datos en la tabla 'rentACarDataSet.marcas' Puede moverla o quitarla según sea necesario.
@@ -82,15 +84,21 @@ namespace Rent_A_Car_Definitivo
         private void buttonAccept_Click(object sender, EventArgs e)
         {
             //Validar datos
-            this.Validate(); //valida el contenido del campo actual
+            MessageBox.Show(comboBox1.Text+" "+comboBox2.Text+" "+comboBox3.Text,"guardar?", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                this.Validate(); //valida el contenido del campo actual
 
-            //"cerrar" los text
-            this.vehicleBindingSource.EndEdit();
+                //"cerrar" los text
+                this.vehicleBindingSource.EndEdit();
 
-            //Actualizar datos
-            this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
+                //Actualizar datos
+                this.tableAdapterManager.UpdateAll(this.rentACarDataSet);
 
-            modoEdicion(false);
+                modoEdicion(false);
+
+            }
+
 
         }
 
@@ -101,7 +109,7 @@ namespace Rent_A_Car_Definitivo
             matriculaTextBox.Text = "";
             comboBox1.Text = "";
             comboBox2.Text = "";
-            comboBox3.Text = "";
+            //comboBox3.Text = "";
             colorTextBox.Text = "";
 
             modoEdicion(false);
